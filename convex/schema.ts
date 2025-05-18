@@ -51,7 +51,7 @@ export default defineSchema({
         postId: v.optional(v.id("posts")),
         commentId: v.optional(v.id("comments")),
         isRead: v.boolean(),
-    }).index("by_receiverId", ["receiverId"])
+    }).index("by_receiverId", ["receiverId"]),
 
     bookmarks: defineTable({
         userId: v.id("users"),
@@ -59,5 +59,5 @@ export default defineSchema({
     }).index("by_user", ["userId"])
     .index("by_post", ["postId"])
     .index("by_user_and_post", ["userId","postId"]),
-    auth
+    
 })
